@@ -1,5 +1,14 @@
 # CHANGELOG
 
+## 0.12.2
+
+没有代码改动，补的是「以后怎么发版」。
+
+- **CI**：推 `main` 跑八个测试套件；推 `vX.Y.Z` tag 自动发到 npm
+- 发布走 npm **trusted publishing**（OIDC 临时凭证），仓库里不存任何 token；带 `--provenance`，包页上能看到它是从哪个 commit、哪个 workflow 构建的
+- workflow 里先比对 tag 和 `package.json` 的版本，再查该版本发过没有——重跑、手动触发都不会撞 409
+- README 补「发版」一节；安装一节加了 `npm i` 这条更省事的路
+
 ## 0.12.1
 
 只改元数据，一行逻辑没动。
