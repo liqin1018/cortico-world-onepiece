@@ -1,6 +1,6 @@
 {
   "name": "cortico-world-onepiece",
-  "version": "0.12.0",
+  "version": "0.12.1",
   "description": "给 Coopanion 桌宠的航海剧情世界：119 章连载、三回合 BOSS、同伴与船坞、名刀 / 果实 / 霸气 / 图鉴，四块石碑之后还有隐藏章。整块面板是复古羊皮纸风。",
   "type": "module",
   "main": "./src/index.js",
@@ -19,11 +19,11 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/lutsing/cortico-world-onepiece.git"
+    "url": "git+https://github.com/liqin1018/cortico-world-onepiece.git"
   },
-  "homepage": "https://github.com/lutsing/cortico-world-onepiece#readme",
+  "homepage": "https://github.com/liqin1018/cortico-world-onepiece#readme",
   "bugs": {
-    "url": "https://github.com/lutsing/cortico-world-onepiece/issues"
+    "url": "https://github.com/liqin1018/cortico-world-onepiece/issues"
   },
   "author": "lutsing",
   "publishConfig": {
