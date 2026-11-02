@@ -29,6 +29,17 @@
 
 需要先装好 [Coopanion](https://github.com/Pal-AI-Lab/Coopanion)（它自己是一个 DSH 插件）。
 
+两种装法，选一种。
+
+**方式一：从 npm 装**（最省事）
+
+```bash
+cd <Coopanion 数据目录>/extensions
+npm i cortico-world-onepiece
+```
+
+**方式二：本地链接**（想改代码就用这个）
+
 把这个仓库克隆到任意位置，然后编辑 Coopanion 数据目录下的 `extensions/package.json`，加一条本地链接依赖：
 
 ```json
@@ -41,7 +52,7 @@
 
 然后在 Coopanion 里重载扩展（或直接重启应用），到设置里找到「海贼王大冒险」，打开并配置。
 
-Node.js >= 22。不需要 `npm install`——这个包没有运行时依赖。
+Node.js >= 22。包本身没有运行时依赖。
 
 ## 关于版权
 
