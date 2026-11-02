@@ -15,9 +15,20 @@
     "describe.json",
     "README.md",
     "CHANGELOG.md",
-    "LICENSE",
-    "docs"
+    "LICENSE"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lutsing/cortico-world-onepiece.git"
+  },
+  "homepage": "https://github.com/lutsing/cortico-world-onepiece#readme",
+  "bugs": {
+    "url": "https://github.com/lutsing/cortico-world-onepiece/issues"
+  },
+  "author": "lutsing",
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  },
   "keywords": [
     "cortico-world",
     "cortico",
