@@ -1,7 +1,7 @@
 {
   "name": "cortico-world-onepiece",
   "version": "0.12.0",
-  "description": "给 Coopanion 桌宠的海贼王剧情世界：119 章剧情、三回合 BOSS、船员与船坞、33 把名刀 / 18 颗恶魔果实 / 霸气 / 图鉴，四块历史正文后还有隐藏章。整块面板是复古羊皮纸风。",
+  "description": "给 Coopanion 桌宠的航海剧情世界：119 章连载、三回合 BOSS、同伴与船坞、名刀 / 果实 / 霸气 / 图鉴，四块石碑之后还有隐藏章。整块面板是复古羊皮纸风。",
   "type": "module",
   "main": "./src/index.js",
   "exports": {
@@ -22,17 +22,16 @@
     "cortico-world",
     "cortico",
     "coopanion",
-    "onepiece",
+    "desktop-pet",
     "pirate",
     "bounty",
-    "desktop-pet",
-    "海贼王",
+    "adventure",
+    "story",
+    "voyage",
+    "crew",
+    "ship",
     "collection",
-    "devil-fruit",
-    "history",
-    "poneglyph",
-    "crew-bond",
-    "katana",
+    "game",
     "ui"
   ],
   "engines": {
@@ -61,11 +60,11 @@
     "locales": {
       "zh": {
         "displayName": "海贼王大冒险",
-        "description": "给桌宠的赏金世界：119 章剧情、三回合 BOSS、船员与船坞、33 把名刀（含无上大快刀十二工）、18 颗恶魔果实、霸气与图鉴，四块历史正文后还有一个隐藏章。羊皮纸与木牌的复古航海界面，单机、不联网、不额外调用模型。"
+        "description": "给桌宠的赏金世界：119 章连载，她一章一章往前打，打不过就自己练级。三回合 BOSS、同伴与船坞、三档名刀、十八颗果实、三种霸气、132 条图鉴，四块石碑凑齐还有一段隐藏章。羊皮纸与木牌的复古航海界面，单机、不联网、不额外调用模型。"
       },
       "en": {
         "displayName": "Bounty Seas",
-        "description": "A bounty world for your desktop pet: 119 chapters, three-round bosses, crew and ship upgrades, 33 named blades (including the twelve supreme grade), 18 devil fruits, haki, a codex, four poneglyphs and a hidden final chapter. Aged-parchment retro nautical UI. Single-player, offline, no extra model calls."
+        "description": "A bounty world for your desktop pet: 119 serialized chapters she clears one at a time, three-round bosses, a crew and a six-part ship to build up, three tiers of named blades, 18 fruits, three kinds of aura, a 132-entry codex, four stone tablets and a hidden final chapter. Aged-parchment retro nautical UI. Single-player, offline, no extra model calls."
       }
     }
   }
