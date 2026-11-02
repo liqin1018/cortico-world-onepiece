@@ -54,6 +54,24 @@ npm i cortico-world-onepiece
 
 Node.js >= 22。包本身没有运行时依赖。
 
+## 发版
+
+改版本号、提交，然后打个 tag 推上去：
+
+```bash
+npm version patch --no-git-tag-version   # 或手动改 package.json
+git commit -am "0.12.2"
+git tag v0.12.2
+git push origin main --tags
+```
+
+GitHub Actions 会先跑完测试，再发到 npm（`.github/workflows/publish.yml`）。用的是 npm **trusted publishing**——仓库里不存任何 token，但要先在 npm 上配一次：
+
+> npmjs.com → 这个包 → Settings → Trusted publishing → GitHub Actions
+> Organization `liqin1018` · Repository `cortico-world-onepiece` · Workflow `publish.yml`
+
+同一个版本号发过就不能覆盖，所以 workflow 里先查一遍：已经发过就安静跳过，重跑和手动触发都不会报错。
+
 ## 关于版权
 
 这是一个**非官方、免费、非商业的同人作品**。
