@@ -1,0 +1,72 @@
+{
+  "name": "cortico-world-onepiece",
+  "version": "0.12.0",
+  "description": "给 Coopanion 桌宠的海贼王剧情世界：119 章剧情、三回合 BOSS、船员与船坞、33 把名刀 / 18 颗恶魔果实 / 霸气 / 图鉴，四块历史正文后还有隐藏章。整块面板是复古羊皮纸风。",
+  "type": "module",
+  "main": "./src/index.js",
+  "exports": {
+    ".": "./src/index.js"
+  },
+  "files": [
+    "src",
+    "webui",
+    "assets",
+    "scripts",
+    "describe.json",
+    "README.md",
+    "CHANGELOG.md",
+    "LICENSE",
+    "docs"
+  ],
+  "keywords": [
+    "cortico-world",
+    "cortico",
+    "coopanion",
+    "onepiece",
+    "pirate",
+    "bounty",
+    "desktop-pet",
+    "海贼王",
+    "collection",
+    "devil-fruit",
+    "history",
+    "poneglyph",
+    "crew-bond",
+    "katana",
+    "ui"
+  ],
+  "engines": {
+    "node": ">=22"
+  },
+  "license": "MIT",
+  "scripts": {
+    "describe": "node scripts/describe.mjs",
+    "test": "node test/contract.mjs && node test/campaign.mjs && node test/auto.mjs && node test/act.mjs && node test/weather.mjs && node test/sim.mjs && node test/migrate.mjs && node test/story.mjs",
+    "tune": "node scripts/tune.mjs",
+    "cost": "node scripts/token-cost.mjs",
+    "balance": "node scripts/balance.mjs"
+  },
+  "cortico": {
+    "kind": "world",
+    "api": 6,
+    "displayName": "海贼王大冒险",
+    "icon": "assets/icon.svg",
+    "webUiClient": "webui/client.js",
+    "describe": "describe.json",
+    "tags": [
+      "game",
+      "companion",
+      "internal-state"
+    ],
+    "locales": {
+      "zh": {
+        "displayName": "海贼王大冒险",
+        "description": "给桌宠的赏金世界：119 章剧情、三回合 BOSS、船员与船坞、33 把名刀（含无上大快刀十二工）、18 颗恶魔果实、霸气与图鉴，四块历史正文后还有一个隐藏章。羊皮纸与木牌的复古航海界面，单机、不联网、不额外调用模型。"
+      },
+      "en": {
+        "displayName": "Bounty Seas",
+        "description": "A bounty world for your desktop pet: 119 chapters, three-round bosses, crew and ship upgrades, 33 named blades (including the twelve supreme grade), 18 devil fruits, haki, a codex, four poneglyphs and a hidden final chapter. Aged-parchment retro nautical UI. Single-player, offline, no extra model calls."
+      }
+    }
+  }
+}

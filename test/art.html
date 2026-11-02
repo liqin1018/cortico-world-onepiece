@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>船的四个阶段 / 头像变体</title>
+<style>
+  body { margin: 0; background: #fff; color: #1f2329; font-family: "PingFang SC", "Microsoft YaHei", system-ui, sans-serif; }
+  .wrap { max-width: 900px; margin: 24px auto; padding: 0 18px 40px; }
+  h2 { font-size: 14px; font-weight: 600; color: #5f6672; letter-spacing: .06em; margin: 22px 0 10px; }
+  .row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+  .row.wide { grid-template-columns: repeat(8, 1fr); }
+  .cell { border: .5px solid rgba(0,0,0,.14); border-radius: 12px; padding: 8px; background: #0d3a5c; }
+  .cell.light { background: #f7f5ef; }
+  .cell svg { display: block; width: 100%; height: auto; }
+  .cap { font-size: 12px; color: #8b8b8f; margin-top: 6px; text-align: center; }
+  .cell.dark .cap { color: #c7d6e2; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h2>船 · 四个阶段</h2>
+  <div class="row" id="ships"></div>
+  <h2>悬赏令头像 · 同一个名字永远同一张脸</h2>
+  <div class="row wide" id="faces"></div>
+</div>
+<script type="module">
+  import { __art } from '../webui/client.js';
+  const ships = document.getElementById('ships');
+  ['小帆船', '梅丽号', '千里阳光号', '巨人战船'].forEach((name, i) => {
+    const cell = document.createElement('div');
+    cell.className = 'cell dark';
+    cell.innerHTML = __art.shipArt(i + 1);
+    const cap = document.createElement('div');
+    cap.className = 'cap';
+    cap.textContent = name;
+    cell.append(cap);
+    ships.append(cell);
+  });
+  const faces = document.getElementById('faces');
+  [['可颂', '珊瑚', 30_000_000], ['穹', '巨浪', 300_000_000], ['阿岚', '夜鸦', 90_000_000], ['米娅', '铁锚', 1_200_000_000], ['老陈', '旱烟', 66_000_000], ['霜', '白鲸', 410_000_000], ['吉姆', '铁钩', 12_000_000], ['南', '雾灯', 880_000_000]].forEach(([n, e, b]) => {
+    const cell = document.createElement('div');
+    cell.className = 'cell light';
+    cell.innerHTML = __art.portrait(n, e, b);
+    const cap = document.createElement('div');
+    cap.className = 'cap';
+    cap.textContent = `${n} · ${b >= 1e8 ? '过亿' : '未过亿'}`;
+    cell.append(cap);
+    faces.append(cell);
+  });
+</script>
+</body>
+</html>

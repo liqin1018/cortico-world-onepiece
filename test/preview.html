@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>面板预览</title>
+<style>
+  :root {
+    --ink: #1f2329; --ink-soft: #5f6672; --ink-dim: #8b8b8f;
+    --accent: #0a6cff; --warn: #b7791f; --danger: #c0392b; --bg: #fff;
+  }
+  body { margin: 0; background: #fff; color: #1f2329; font-family: "PingFang SC", "Microsoft YaHei", system-ui, sans-serif; }
+  .wrap { max-width: 820px; margin: 28px auto; padding: 0 18px 40px; }
+  .hint { color: #8b8b8f; font-size: 12px; margin-bottom: 14px; }
+  /* 截图模式（?shot=1）：去掉提示条和四周留白，底色换成纸色，截出来就是干净的面板 */
+  body.shot { background: #f2ead6; }
+  body.shot .wrap { margin: 0 auto; padding: 14px 14px 18px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="hint">预览数据 · 只用于截图，不是真实存档</div>
+  <div id="root"></div>
+</div>
+<script type="module">
+  import panel from '../webui/client.js';
+  const qs = new URLSearchParams(location.search);
+  // 截图模式：不留预览提示，也不留大片白边。
+  if (qs.get('shot')) {
+    document.body.classList.add('shot');
+    document.querySelector('.hint')?.remove();
+  }
+  const suffix = ['voyage', 'blocked', 'boss', 'merry', 'void', 'debug']
+    .map((k) => (qs.get(k) ? `-${k}` : ''))
+    .find(Boolean) ?? '';
+  const tab = qs.get('tab');
+  fetch(`./preview-data${suffix}.json`).then((r) => r.json()).then((data) => {
+    const ctx = {
+      root: document.getElementById('root'),
+      invoke: async (method) => (method === 'state' ? data : '预览里不真的出海'),
+      interval: (fn, ms) => { const id = setInterval(fn, ms); return { dispose: () => clearInterval(id) }; },
+      stream() {},
+      ui: {},
+    };
+    panel.panels.sea.mount(ctx);
+    if (tab) {
+      const order = { story: 0, sea: 1, ship: 2, poster: 3, codex: 4, board: 5, log: 6 };
+      setTimeout(() => document.querySelectorAll(".op-tab")[order[tab] ?? 0]?.click(), 240);
+    }
+    const y = Number(qs.get('y') || 0);
+    if (y) setTimeout(() => window.scrollTo(0, y), 420);
+    if (qs.get('focus') === 'chapter') {
+      setTimeout(() => {
+        document.querySelectorAll('.op-banner, .op-choice, .op-advice').forEach((n) => n.remove());
+      }, 300);
+    }
+  }).catch((e) => {
+    document.getElementById('root').textContent = '载入失败：' + e.message;
+  });
+</script>
+</body>
+</html>

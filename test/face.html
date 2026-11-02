@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>头像放大看</title>
+<style>
+  body { margin: 0; background: #f6f2e8; font-family: "PingFang SC", "Microsoft YaHei", sans-serif; }
+  .wrap { display: flex; gap: 14px; padding: 16px; }
+  .cell { width: 280px; background: #f0e2c2; border: 2px solid #241a12; padding: 6px; }
+  .cell svg { display: block; width: 100%; height: auto; }
+  .cap { font-size: 12px; color: #5b4630; text-align: center; padding-top: 4px; }
+</style>
+</head>
+<body>
+<div class="wrap" id="row"></div>
+<script type="module">
+  import { __art } from '../webui/client.js';
+  const row = document.getElementById('row');
+  const faces = [
+    ['可颂', '珊瑚', 212000000],
+    ['穹', '巨浪', 320000000],
+    ['阿岚', '夜鸦', 90000000],
+    ['米娅', '铁锚', 1200000000],
+  ];
+  for (const [n, e, b] of faces) {
+    const cell = document.createElement('div');
+    cell.className = 'cell';
+    cell.innerHTML = __art.portrait(n, e, b);
+    const cap = document.createElement('div');
+    cap.className = 'cap';
+    cap.textContent = `${n}「${e}」`;
+    cell.append(cap);
+    row.append(cell);
+  }
+</script>
+</body>
+</html>

@@ -1,0 +1,18 @@
+# 依赖
+node_modules/
+npm-debug.log*
+
+# 预览数据是生成物：node test/make-preview.mjs 重新生成
+test/preview-data*.json
+
+# 开发时随手截的图，不进仓库（docs/screenshots 里的是正式配图）
+test/*.png
+
+# 本地存档与备份
+onepiece.json
+*.old-*
+
+# 系统垃圾
+.DS_Store
+Thumbs.db
+desktop.ini
